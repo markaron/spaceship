@@ -48,7 +48,9 @@
                 <a th:href="'/topship/' + *{id}">to ship</a>
             </div>
             <div th:unless="${spaceship.getPlanet().equals(planet.name)}">
-                <span class="button" th:action="'/movehere/' + *{id}">Move here</span>
+                <form th:action="'/movehere/' + *{id}">
+                    <input type="submit" value="Jump here"/>
+                </form>
             </div>
         </td>
         <td th:if="${spaceship.getPlanet().equals(planet.name)}" th:text="${spaceship.getUtilization()}"></td>
