@@ -1,9 +1,34 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" type="text/css" href="mystyle.css">
     <meta charset="UTF-8">
     <title>Next Generation</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="mystyle.css">
+    <style>
+        body {
+            background-color: lightblue;
+        }
+
+        h1 {
+            color: orange;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            text-align: center;
+            font-size: large;
+        }
+        th {
+            background-color: darkseagreen;
+            color: aliceblue;
+        }
+        tr:nth-child(even) {
+            background-color: khaki;
+        }
+        tr:nth-child(odd) {
+            background-color: ivory;
+        }
+    </style>
 </head>
 <body>
 <h1>Space Transporter</h1>
@@ -17,7 +42,7 @@
     <tr th:each="planet : ${planetList}" th:object="${planet}">
         <td th:text="*{name}"></td>
         <td th:text="*{population}"></td>
-        <td th:if="${spaceship.getPlanet() == planet.name} ? 'to planet': 'move here'"></td>
+        <td th:text="${spaceship.getPlanet().equals(planet.name)} ? 'to planet': 'move here'"></td>
         <td th:text="${spaceship.getUtilization()}"></td>
     </tr>
 </table>
