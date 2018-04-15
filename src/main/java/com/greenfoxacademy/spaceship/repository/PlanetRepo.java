@@ -1,4 +1,7 @@
 package com.greenfoxacademy.spaceship.repository;
 
-public interface PlanetRepo {
+import com.greenfoxacademy.spaceship.model.Planet;
+import org.springframework.data.repository.CrudRepository;
+
+public interface PlanetRepo extends CrudRepository<Planet, Long> {
 }

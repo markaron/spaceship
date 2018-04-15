@@ -12,7 +12,7 @@ public class Planet {
   @Id
   private Long id;
   private String name;
-  private int population;
+  private Long population;
 
   public Planet() {
   }
@@ -25,11 +25,11 @@ public class Planet {
     this.name = name;
   }
 
-  public int getPopulation() {
+  public Long getPopulation() {
     return population;
   }
 
-  public void setPopulation(int population) {
+  public void setPopulation(Long population) {
     this.population = population;
   }
 }
