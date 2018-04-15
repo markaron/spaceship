@@ -45,12 +45,13 @@
         <td>
             <div th:if="${spaceship.getPlanet().equals(planet.name)}">
                 <a th:href="'/toplanet/' + *{id}">to planet</a>
+                <a th:href="'/topship/' + *{id}">to ship</a>
             </div>
             <div th:unless="${spaceship.getPlanet().equals(planet.name)}">
-                <a th:href="'/movehere/' + *{id}">Move here</a>
+                <span class="button" th:action="'/movehere/' + *{id}">Move here</span>
             </div>
         </td>
-        <td th:text="${spaceship.getUtilization()}"></td>
+        <td th:if="${spaceship.getPlanet().equals(planet.name)}" th:text="${spaceship.getUtilization()}"></td>
     </tr>
 </table>
 </body>

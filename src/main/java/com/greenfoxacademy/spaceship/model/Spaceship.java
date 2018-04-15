@@ -11,19 +11,19 @@ public class Spaceship {
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Id
   private Long id;
-  private int max_capacity = 60;
+  private int maxCapacity = 60;
   private String planet;
   private Long utilization;
 
   public Spaceship() {
   }
 
-  public int getMax_capacity() {
-    return max_capacity;
+  public int getMaxCapacity() {
+    return maxCapacity;
   }
 
-  public void setMax_capacity(int max_capacity) {
-    this.max_capacity = max_capacity;
+  public void setMaxCapacity(int maxCapacity) {
+    this.maxCapacity = maxCapacity;
   }
 
   public String getPlanet() {
@@ -40,5 +40,13 @@ public class Spaceship {
 
   public void setUtilization(Long utilization) {
     this.utilization = utilization;
+  }
+
+  public void increaseUtil(Long num) {
+    this.utilization += num;
+  }
+
+  public void decreaseUtil(Long num) {
+    this.utilization -= num;
   }
 }
