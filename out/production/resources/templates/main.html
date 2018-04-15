@@ -42,7 +42,14 @@
     <tr th:each="planet : ${planetList}" th:object="${planet}">
         <td th:text="*{name}"></td>
         <td th:text="*{population}"></td>
-        <td th:text="${spaceship.getPlanet().equals(planet.name)} ? 'to planet': 'move here'"></td>
+        <td>
+            <div th:if="${spaceship.getPlanet().equals(planet.name)}">
+                <a th:href="'/toplanet/' + *{id}">to planet</a>
+            </div>
+            <div th:unless="${spaceship.getPlanet().equals(planet.name)}">
+                <a th:href="'/movehere/' + *{id}">Move here</a>
+            </div>
+        </td>
         <td th:text="${spaceship.getUtilization()}"></td>
     </tr>
 </table>

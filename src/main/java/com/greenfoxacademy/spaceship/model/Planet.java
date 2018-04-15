@@ -17,6 +17,10 @@ public class Planet {
   public Planet() {
   }
 
+  public Long getId() {
+    return id;
+  }
+
   public String getName() {
     return name;
   }
@@ -31,5 +35,13 @@ public class Planet {
 
   public void setPopulation(Long population) {
     this.population = population;
+  }
+
+  public void increasePop(Long pop) {
+    this.population += pop;
+  }
+
+  public void decreasePop(Long pop) {
+    this.population -= pop;
   }
 }

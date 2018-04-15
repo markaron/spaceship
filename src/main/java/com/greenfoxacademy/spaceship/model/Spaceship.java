@@ -13,7 +13,7 @@ public class Spaceship {
   private Long id;
   private int max_capacity = 60;
   private String planet;
-  private int utilization;
+  private Long utilization;
 
   public Spaceship() {
   }
@@ -34,11 +34,11 @@ public class Spaceship {
     this.planet = planet;
   }
 
-  public int getUtilization() {
+  public Long getUtilization() {
     return utilization;
   }
 
-  public void setUtilization(int utilization) {
+  public void setUtilization(Long utilization) {
     this.utilization = utilization;
   }
 }
