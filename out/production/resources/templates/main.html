@@ -4,34 +4,9 @@
     <meta charset="UTF-8">
     <title>Next Generation</title>
     <link rel="stylesheet" type="text/css" media="screen" href="mystyle.css">
-    <style>
-        body {
-            background-color: lightblue;
-        }
-
-        h1 {
-            color: orange;
-        }
-
-        table, th, td {
-            border: 1px solid black;
-            text-align: center;
-            font-size: large;
-        }
-        th {
-            background-color: darkseagreen;
-            color: aliceblue;
-        }
-        tr:nth-child(even) {
-            background-color: khaki;
-        }
-        tr:nth-child(odd) {
-            background-color: ivory;
-        }
-    </style>
 </head>
 <body>
-<h1>Space Transporter</h1>
+<h1 align="center">Space Transporter</h1>
 <table align="center">
     <tr>
         <th>Planet</th>
@@ -48,7 +23,7 @@
                 <a th:href="'/topship/' + *{id}">to ship</a>
             </div>
             <div th:unless="${spaceship.getPlanet().equals(planet.name)}">
-                <form th:action="'/movehere/' + *{id}">
+                <form action="#" th:action="'/movehere/' + *{id}" method="post">
                     <input type="submit" value="Jump here"/>
                 </form>
             </div>
